@@ -40,3 +40,24 @@
 .content{
     flex: 4;
 }
+
+.content .products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.content .products .product{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+.content .products .product img{
+    width: 150px;
+    height: 250px;
+    object-fit: contain;
+}
+.content .products .product .productName{
+    font-weight: 300;
+}
