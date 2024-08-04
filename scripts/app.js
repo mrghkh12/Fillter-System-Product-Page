@@ -75,3 +75,26 @@ searchInput.addEventListener('keyup' , e => {
         productItemMaker(productData)
     }
 })
+
+
+const categoieELemMaker = () => {
+    let allUnicCategorie = ['All']
+    productData.forEach(itme => {
+        allUnicCategorie.includes(itme.cat) ? '' : allUnicCategorie.push(itme.cat)
+    })
+    
+    categorieContainer.innerHTML = allUnicCategorie.map(item => `
+        <span class="categorie">${item}</span>
+        `).join("")
+
+
+
+    categorieContainer.addEventListener('click' , e => {
+        let selectedCategorie = e.target.textContent
+
+        selectedCategorie === "All" ? productItemMaker(productData) : 
+        productItemMaker(productData.filter(item => item.cat === selectedCategorie))
+    })
+}
+
+categoieELemMaker()
