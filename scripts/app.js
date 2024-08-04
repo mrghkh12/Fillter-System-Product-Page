@@ -44,4 +44,13 @@ const productData = [
   ];
   
 
-  
+const $ = document
+
+const productContainer = $.querySelector('.products')
+const categorieContainer = $.querySelector('.categorieContainer')
+const searchInput = $.querySelector('.search')
+const priceRange = $.querySelector('.priceRange')
+const priceValue = $.querySelector('.priceValue')
+
+
+
