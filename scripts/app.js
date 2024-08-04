@@ -52,5 +52,15 @@ const searchInput = $.querySelector('.search')
 const priceRange = $.querySelector('.priceRange')
 const priceValue = $.querySelector('.priceValue')
 
+const productItemMaker = (productList) => {
+    productContainer.innerHTML = productList.map(product => `
+        <div class="product">
+            <img src="${product.img}" alt="">
+            <span class="productName">${product.name}</span>
+            <span class="productPrice">${product.price}</span>
+        </div>
+        `
+    ).join("");
+}
 
-
+productItemMaker(productData)
