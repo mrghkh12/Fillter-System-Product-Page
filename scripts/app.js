@@ -63,8 +63,6 @@ const productItemMaker = (productList) => {
     ).join("");
 }
 
-productItemMaker(productData)
-
 
 searchInput.addEventListener('keyup' , e => {
     let searchValue = e.target.value.toLowerCase();
@@ -112,5 +110,8 @@ const filterProductwithPrice = () => {
     })
 }
 
-categoieELemMaker()
-filterProductwithPrice()
+window.addEventListener('load', () => {
+    categoieELemMaker()
+    filterProductwithPrice()
+    productItemMaker(productData)
+})
