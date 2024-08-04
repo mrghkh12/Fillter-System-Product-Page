@@ -64,3 +64,14 @@ const productItemMaker = (productList) => {
 }
 
 productItemMaker(productData)
+
+
+searchInput.addEventListener('keyup' , e => {
+    let searchValue = e.target.value.toLowerCase();
+
+    if(searchValue){
+        productItemMaker(productData.filter(item => item.name.toLocaleLowerCase().indexOf(searchValue) !== -1))
+    }else{
+        productItemMaker(productData)
+    }
+})
