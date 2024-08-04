@@ -97,4 +97,20 @@ const categoieELemMaker = () => {
     })
 }
 
+
+const filterProductwithPrice = () => {
+    const priceList = productData.map(item => item.price);
+    
+    priceRange.min = Math.min(...priceList)
+    priceRange.max = Math.max(...priceList)
+    priceRange.value = Math.max(...priceList)
+    priceValue.textContent = "$" + Math.max(...priceList)
+
+    priceRange.addEventListener('input' , e => {
+        priceValue.textContent = "$" + e.target.value
+        productItemMaker(productData.filter(item => item.price <= e.target.value))
+    })
+}
+
 categoieELemMaker()
+filterProductwithPrice()
